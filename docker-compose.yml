@@ -6,3 +6,9 @@ services:
       - ./keys:/output
     entrypoint: ["/opt/mkp224o/mkp224o"]
     command: ["-d", "/output"]
+    deploy:
+      resources:
+        limits:
+          cpus: "${mkp224o_CPU:-2.0}"
+          memory: "${mkp224o_RAM:-4.0G}"
+          pids: 1000
