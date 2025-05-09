@@ -1,0 +1,8 @@
+services:
+  mkp224o:
+    build: .
+    container_name: mkp224o
+    volumes:
+      - ./keys:/output
+    entrypoint: ["/opt/mkp224o/mkp224o"]
+    command: ["-d", "/output"]
